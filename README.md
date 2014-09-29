@@ -67,6 +67,9 @@ ECMAScript 6 已经将异步操作纳入了规范，现代浏览器也内置了 
 
 如果了解 Promise，可以移步下方，看看对 Promise 的封装：
 
+Github: [https://github.com/barretlee/myPromise](https://github.com/barretlee/myPromise)
+DEMO: [http://barretlee.github.io/myPromise/index.html](http://barretlee.github.io/myPromise/index.html)
+
 如果还不是很了解，可以往下阅读全文，了解一二。
 
 ### 第二章 Promise 原理
