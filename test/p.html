@@ -1,0 +1,18 @@
+Promise Promise 同浏览器接口。
+<script src="../lib/promise.js"></script>
+<script>
+var p = new Promise(function(resolve, reject){
+    resolve(1);
+}).then(function(data){
+    console.log(data);
+    throw 3;
+}).then(function(){
+
+}, function(err){
+    console.log(err);
+    return 4;
+}).then(function(data){
+    console.log(data)
+    throw 2;
+})
+</script>

@@ -1,0 +1,49 @@
+Promise 无错误控制，控制台输出。
+<script src="../lib/promise-minus.js"></script>
+<script>
+var promise = new Promise(function(data){
+	console.log(data);
+	return 1;
+});
+promise.then(function(data){
+	return (function(data){
+		var promise = new Promise();
+
+		setTimeout(function(){
+			console.log(data);
+
+			promise.resolve(2);
+		}, 1000);
+
+		return promise;
+	})(data);
+
+}).then(function(data){
+	return (function(data){
+		var promise = new Promise();
+
+		setTimeout(function(){
+			console.log(data);
+
+			promise.resolve(3);
+		}, 1000);
+
+		return promise;
+	})(data);
+}).then(function(data){
+    return (function(data){
+		var promise = new Promise();
+
+		setTimeout(function(){
+			console.log(data);
+    		console.log("end");
+
+			promise.resolve(3);
+		}, 1000);
+
+		return promise;
+	})(data);
+});
+
+promise.resolve("start");
+</script>
